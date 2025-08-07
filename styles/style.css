@@ -281,8 +281,6 @@ body {
   font-family: "GmarketSansBold", serif;
   font-weight: 500;
   color: var(--primary);
-
-  text-wrap: nowrap;
 }
 
 /* 모바일 */
@@ -425,7 +423,8 @@ body {
 
   .modal__btn {
     margin-top: 2.4rem;
-    padding: 2rem 4.4rem;
+    padding: 2rem 0.8rem;
+    width: 100%;
     line-height: 1.2;
   }
 
