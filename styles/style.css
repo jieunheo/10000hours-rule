@@ -1,0 +1,264 @@
+@import url(./font.css);
+
+:root {
+  --primary: #5b2386;
+  --accent: #fcee21;
+
+  --text-yellow: #f5df4d;
+  --text-white: #fff;
+  --text-grey: #babcbe;
+}
+
+/* utils */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* header */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+button {
+  border: none;
+}
+
+body {
+  font-family: "GmarketSansMedium", sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-white);
+}
+
+.container {
+  background-color: var(--primary);
+  min-height: 100vh;
+  padding-top: 12rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* header */
+.header__img {
+  width: min(56.4rem, calc(100% - 8.2rem));
+  aspect-ratio: 564/265;
+}
+.header__desc {
+  font-family: "OTEnjoystoriesBA", serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 100%;
+  color: var(--text-yellow);
+  margin-top: 5.2rem;
+}
+
+/* main */
+.main {
+  margin-top: 8rem;
+}
+.cont__desc {
+  font-size: 1.8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.cont__desc::before,
+.cont__desc::after {
+  content: "";
+  display: inline-block;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: url(../images/quotes-open.png) no-repeat center / contain;
+}
+.cont__desc::after {
+  background-image: url(../images/quotes-close.png);
+}
+.cont__desc-text {
+  line-height: 2.4rem;
+}
+.cont__desc-text strong {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 100%;
+}
+
+.cont__form {
+  margin-top: 10rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.cont__text {
+  font-size: 2.4rem;
+  word-break: keep-all;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.cont__input {
+  padding: 1.8rem 4rem;
+  border-radius: 0.8rem;
+  font-size: 2.4rem;
+  width: 22.8rem;
+
+  display: flex;
+  align-items: center;
+}
+.cont__input::placeholder {
+  font-family: "GmarketSansMedium", sans-serif;
+  color: var(--text-grey);
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.cont__btn {
+  font-family: "GmarketSansBold", sans-serif;
+  margin-top: 12rem;
+  padding: 2rem 5rem;
+  background-color: var(--accent);
+  border-radius: 1.2rem;
+
+  flex-basis: content;
+
+  color: var(--primary);
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  position: relative;
+}
+.cont__btn::after {
+  content: "";
+  display: inline-block;
+  width: 6.4rem;
+  height: 7.2rem;
+  background: url(../images/click.png) no-repeat center / contain;
+
+  position: absolute;
+  top: 1.4rem;
+  left: calc(100% + 0.7rem);
+}
+
+.result {
+  margin-top: 14.2rem;
+}
+.result__cont {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.result__text {
+  font-size: 2.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+.result__text strong {
+  font-size: 7.2rem;
+  font-weight: 700;
+}
+.result__btns {
+  margin-top: 12rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.result__btn {
+  padding: 2rem 5rem;
+  background-color: var(--accent);
+  border-radius: 1.2rem;
+
+  font-family: "GmarketSansBold", sans-serif;
+  color: var(--primary);
+  font-size: 2.4rem;
+}
+.result__btn--white {
+  background-color: var(--text-white);
+}
+
+/* footer */
+.footer {
+  margin-top: 12rem;
+  margin-bottom: 10.6rem;
+}
+
+.footer__logo-img {
+  aspect-ratio: 168/36;
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+
+  font-family: "Noto Sans KR";
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* modal */
+.modal {
+  display: none;
+
+  width: min(80rem, calc(100% - 120px));
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--text-white);
+  padding: 8rem 4.5rem;
+  border-radius: 2rem;
+  box-shadow: 4px 3px 30px 0 rgba(0, 0, 0, 0.15);
+
+  color: var(--primary);
+  text-align: center;
+}
+.modal__text {
+  font-family: "OTEnjoystoriesBA", sans-serif;
+  font-weight: 500;
+}
+.modal__text-large {
+  font-size: 9.6rem;
+}
+.modal__text-small {
+  font-size: 3.6rem;
+}
+.modal__img {
+  width: 100%;
+  margin-top: 4rem;
+}
+.modal__btn {
+  margin-top: 6rem;
+  padding: 2rem 4.6rem;
+  background-color: var(--accent);
+  border-radius: 1.2rem;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.15);
+
+  font-family: "GmarketSansBold", serif;
+  font-weight: 500;
+  color: var(--primary);
+  font-size: 2.4rem;
+
+  word-break: break-word;
+}
