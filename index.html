@@ -3,7 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>1만 시간의 법칙</title>
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="a11y-hidden">위니브</h1>
+        <h2 class="header__title">
+          <img
+            class="header__img"
+            src="./images/title.png"
+            srcset="
+              ./images/title.png     480w,
+              ./images/title@2x.png  700w,
+              ./images/title@3x.png 1000w
+            "
+            alt="1만 시간의 법칙"
+          />
+        </h2>
+        <p class="header__desc">
+          “연습은 어제의 당신보다 당신을 더 낫게 만든다.”
+        </p>
+      </header>
+
+      <main class="main">
+        <section class="cont">
+          <h3 class="a11y-hidden">1만 시간의 법칙이란?</h3>
+          <div class="cont__desc">
+            <p class="cont__desc-text">
+              <strong>1만 시간의 법칙</strong>은<br />
+              어떤 분야의 전문가가 되기 위해서는<br />
+              최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+            </p>
+          </div>
+
+          <form class="cont__form">
+            <p class="cont__text">
+              나는
+              <input
+                class="cont__input"
+                type="text"
+                name=""
+                id=""
+                placeholder="예)프로그래밍"
+                required
+              />
+              전문가가 될 것이다.
+            </p>
+            <p class="cont__text">
+              그래서 앞으로 매일 하루에<wbr />
+              <input
+                class="cont__input"
+                type="text"
+                name=""
+                id=""
+                placeholder="예)5시간"
+                required
+              />
+              시간씩 훈련할 것이다.
+            </p>
+
+            <button class="cont__btn">
+              나는 며칠 동안 훈련을 해야
+              <span class="cont__btn--br">1만 시간이 될까?</span>
+            </button>
+          </form>
+
+          <div class="result">
+            <div class="result__cont">
+              <p class="result__text">
+                당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서
+              </p>
+              <p class="result__text">
+                대략 <strong>5110</strong> 일 이상 훈련하셔야 합니다! :)
+              </p>
+            </div>
+
+            <div class="result__btns">
+              <button class="result__btn">훈련하러 가기 GO~ GO!</button>
+              <button class="result__btn result__btn--white">공유하기</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <h2 class="footer__logo">
+          <img class="footer__logo-img" src="./images/logo-m.png" alt="weniv" />
+        </h2>
+        <p class="footer__copyright">
+          본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 위니브에
+          있습니다.<br />
+          수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
+        </p>
+      </footer>
+    </div>
+
+    <section class="modal">
+      <h2 class="a11y-hidden">훈련하러 가기 모달</h2>
+      <p class="modal__text modal__text-large">
+        화이팅!!<span class="modal__text--pc">♥♥♥</span>
+      </p>
+      <p class="modal__text modal__text-small">당신의 꿈을 응원합니다!</p>
+
+      <img class="modal__img" src="./images/licat.png" alt="응원하는 라이캣" />
+
+      <button class="modal__btn">
+        종료하고 진짜 <span class="modal__btn--br">훈련하러 가기 GO!GO!</span>
+      </button>
+    </section>
+  </body>
 </html>
