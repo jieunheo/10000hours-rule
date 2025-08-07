@@ -1,14 +1,5 @@
 @import url(./font.css);
 
-:root {
-  --primary: #5b2386;
-  --accent: #fcee21;
-
-  --text-yellow: #f5df4d;
-  --text-white: #fff;
-  --text-grey: #babcbe;
-}
-
 /* utils */
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);
@@ -21,7 +12,16 @@
   position: absolute;
 }
 
-/* header */
+/* 공통 */
+:root {
+  --primary: #5b2386;
+  --accent: #fcee21;
+
+  --text-yellow: #f5df4d;
+  --text-white: #fff;
+  --text-grey: #babcbe;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -59,6 +59,7 @@ body {
   width: 56.4rem;
   aspect-ratio: 564/265;
 }
+
 .header__desc {
   font-family: "OTEnjoystoriesBA", serif;
   font-weight: 400;
@@ -72,12 +73,15 @@ body {
 .main {
   margin-top: 8rem;
 }
+
+/* main - cont__desc */
 .cont__desc {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
+
 .cont__desc::before,
 .cont__desc::after {
   content: "";
@@ -86,19 +90,23 @@ body {
   height: 3.2rem;
   background: url(../images/quotes-open.png) no-repeat center / contain;
 }
+
 .cont__desc::after {
   background-image: url(../images/quotes-close.png);
 }
-.cont__desc-text {
+
+.cont__text {
   font-size: 1.8rem;
   line-height: 2.4rem;
 }
-.cont__desc-text strong {
+
+.cont__text strong {
   font-weight: 700;
   line-height: 100%;
 }
 
-.cont__form {
+/* main - form */
+.form {
   margin-top: 10rem;
 
   display: flex;
@@ -106,7 +114,8 @@ body {
   align-items: center;
   gap: 2rem;
 }
-.cont__text {
+
+.form__text {
   word-break: keep-all;
 
   display: flex;
@@ -114,21 +123,23 @@ body {
   align-items: center;
   gap: 2rem;
 }
-.cont__input {
+
+.form__input {
+  font-family: "GmarketSansMedium", sans-serif;
   padding: 1.8rem 4rem;
   border-radius: 0.8rem;
   width: 22.8rem;
 
   display: flex;
   align-items: center;
-}
-.cont__input::placeholder {
-  font-family: "GmarketSansMedium", sans-serif;
-  color: var(--text-grey);
   text-align: center;
 }
 
-.cont__btn {
+.form__input::placeholder {
+  color: var(--text-grey);
+}
+
+.form__btn {
   font-family: "GmarketSansBold", sans-serif;
   margin-top: 12rem;
   padding: 2rem 5rem;
@@ -142,7 +153,8 @@ body {
 
   position: relative;
 }
-.cont__btn::after {
+
+.form__btn::after {
   content: "";
   display: inline-block;
   width: 6.4rem;
@@ -154,20 +166,24 @@ body {
   left: calc(100% + 0.7rem);
 }
 
+/* main - result */
 .result {
   margin-top: 14.2rem;
 }
+
 .result__cont {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
 .result__text {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
 }
+
 .result__text strong {
   font-size: 7.2rem;
   font-weight: 700;
@@ -180,6 +196,7 @@ body {
   justify-content: center;
   gap: 1.2rem;
 }
+
 .result__btn {
   padding: 2rem 5rem;
   background-color: var(--accent);
@@ -188,6 +205,7 @@ body {
   font-family: "GmarketSansBold", sans-serif;
   color: var(--primary);
 }
+
 .result__btn--white {
   background-color: var(--text-white);
 }
@@ -198,7 +216,7 @@ body {
   margin-bottom: 10.6rem;
 }
 
-.footer__logo-img {
+.logo__img {
   aspect-ratio: 168/36;
 }
 
@@ -228,20 +246,25 @@ body {
   color: var(--primary);
   text-align: center;
 }
+
 .modal__text {
   font-family: "OTEnjoystoriesBA", sans-serif;
   font-weight: 500;
 }
-.modal__text-large {
+
+.modal__text--large {
   font-size: 9.6rem;
 }
-.modal__text-small {
+
+.modal__text--small {
   font-size: 3.6rem;
 }
+
 .modal__img {
   width: 100%;
   margin-top: 4rem;
 }
+
 .modal__btn {
   margin-top: 6rem;
   padding: 2rem 4.6rem;
@@ -258,9 +281,11 @@ body {
 
 /* 모바일 */
 @media screen and (max-width: 768px) {
+  /* 공통 */
   button {
     font-size: 1.4rem;
   }
+
   .container {
     padding-top: 4.1rem;
     font-size: 1.4rem;
@@ -281,45 +306,55 @@ body {
   .main {
     margin-top: 3.2rem;
   }
+
+  /* main - cont__desc */
   .cont__desc {
     gap: 0;
   }
-  .cont__desc-text {
+
+  .cont__text {
     font-size: 1.4rem;
     font-weight: 100;
   }
+
   .cont__desc::before,
   .cont__desc::after {
     width: 2rem;
     height: 1.8rem;
   }
 
-  .cont__form {
+  /* main - form */
+  .form {
     margin-top: 6rem;
     gap: 1.2rem;
   }
-  .cont__text {
+
+  .form__text {
     gap: 0.8rem;
 
     flex-wrap: wrap;
   }
-  .cont__input {
+
+  .form__input {
     padding: 1.2rem 3.5rem;
     width: 15.6rem;
   }
-  .cont__text--mobile {
+
+  .form__text--mobile {
     width: 100%;
   }
 
-  .cont__btn {
+  .form__btn {
     margin-top: 8rem;
     font-size: 1.4rem;
     padding: 2rem 3.8rem;
   }
-  .cont__btn--mobile {
+
+  .form__btn--mobile {
     display: block;
   }
-  .cont__btn::after {
+
+  .form__btn::after {
     width: 4.3rem;
     height: 4.8rem;
 
@@ -327,9 +362,11 @@ body {
     left: calc(100% + 0.4rem);
   }
 
+  /* main - result */
   .result {
     margin-top: 6.8rem;
   }
+
   .result__text strong {
     font-size: 2.4rem;
   }
@@ -338,6 +375,7 @@ body {
     margin-top: 5.2rem;
     gap: 0.8rem;
   }
+
   .result__btn {
     padding: 1.6rem 2.4rem;
   }
@@ -358,19 +396,24 @@ body {
   .modal {
     padding: 4rem 4.5rem;
   }
+
   .modal__text-large {
     font-size: 6.4rem;
   }
+
   .modal__text--mobile {
     display: none;
   }
+
   .modal__img {
     margin-top: 2.4rem;
   }
+
   .modal__btn {
     margin-top: 2.4rem;
     padding: 2rem 4.4rem;
   }
+
   .modal__btn--mobile {
     display: block;
   }
