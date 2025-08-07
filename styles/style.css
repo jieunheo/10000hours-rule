@@ -407,9 +407,11 @@ body {
   /* modal */
   .modal {
     padding: 4rem 4.5rem;
+
+    width: min(33rem, calc(100% - 30px));
   }
 
-  .modal__text-large {
+  .modal__text--large {
     font-size: 6.4rem;
   }
 
