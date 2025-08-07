@@ -297,12 +297,12 @@ body {
 
   /* header */
   .header__img {
-    width: 27.8rem;
+    width: max(27.8rem, calc(100% - 20rem));
     aspect-ratio: 278/130;
   }
 
   .header__desc {
-    font-size: 2.2rem;
+    font-size: max(2.2rem, 6vw);
     margin-top: 3.2rem;
   }
 
@@ -317,12 +317,12 @@ body {
   }
 
   .cont__text {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 3vw);
     font-weight: 100;
   }
 
   .cont__text strong {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 3vw);
   }
 
   .cont__desc::before,
@@ -340,13 +340,14 @@ body {
   .form__text {
     gap: 0.8rem;
 
+    font-size: max(1.4rem, 3vw);
     flex-wrap: wrap;
   }
 
   .form__input {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 3vw);
     padding: 1.2rem 2rem;
-    width: 15.6rem;
+    width: max(15.6rem, 30vw);
   }
 
   .form__text--mobile {
@@ -355,7 +356,7 @@ body {
 
   .form__btn {
     margin-top: 8rem;
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 3vw);
     padding: 2rem 3.8rem;
     line-height: 1.2;
   }
@@ -377,8 +378,12 @@ body {
     margin-top: 6.8rem;
   }
 
+  .result__text {
+    font-size: max(1.4rem, 3vw);
+  }
+
   .result__text strong {
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 8vw);
   }
 
   .result__btns {
@@ -388,6 +393,7 @@ body {
 
   .result__btn {
     padding: 1.6rem 2.4rem;
+    font-size: max(1.4rem, 3vw);
   }
 
   /* footer */
@@ -406,11 +412,11 @@ body {
   .modal {
     padding: 4rem 4.5rem;
 
-    width: min(33rem, calc(100% - 30px));
+    width: max(33rem, calc(100% - 120px));
   }
 
   .modal__text--large {
-    font-size: 6.4rem;
+    font-size: max(6.4rem, 15vw);
   }
 
   .modal__text--mobile {
@@ -426,6 +432,7 @@ body {
     padding: 2rem 0.8rem;
     width: 100%;
     line-height: 1.2;
+    font-size: max(1.4rem, 3vw);
   }
 
   .modal__btn--mobile {
