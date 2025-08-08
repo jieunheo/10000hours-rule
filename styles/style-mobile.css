@@ -1,0 +1,153 @@
+/* 공통 */
+button {
+  font-size: 1.4rem;
+}
+
+.container {
+  padding-top: 4.1rem;
+  font-size: 1.4rem;
+}
+
+/* header */
+.header__img {
+  width: max(27.8rem, calc(100% - 20rem));
+  aspect-ratio: 278/130;
+}
+
+.header__desc {
+  font-size: max(2.2rem, 6vw);
+  margin-top: 3.2rem;
+}
+
+/* main */
+.main {
+  margin-top: 3.2rem;
+}
+
+/* main - cont__desc */
+.cont__desc {
+  gap: 0;
+}
+
+.cont__text {
+  font-size: max(1.4rem, 3vw);
+  font-weight: 100;
+}
+
+.cont__text strong {
+  font-size: max(1.4rem, 3vw);
+}
+
+.cont__desc::before,
+.cont__desc::after {
+  width: 2rem;
+  height: 1.8rem;
+}
+
+/* main - form */
+.form {
+  margin-top: 6rem;
+  gap: 1.2rem;
+}
+
+.form__text {
+  gap: 0.8rem;
+
+  font-size: max(1.4rem, 3vw);
+  flex-wrap: wrap;
+}
+
+.form__input {
+  font-size: max(1.4rem, 3vw);
+  padding: 1.2rem 2rem;
+  width: max(15.6rem, 30vw);
+}
+
+.form__text--mobile {
+  width: 100%;
+}
+
+.form__btn {
+  margin-top: 8rem;
+  font-size: max(1.4rem, 3vw);
+  padding: 2rem 3.8rem;
+  line-height: 1.2;
+}
+
+.form__btn--mobile {
+  display: block;
+}
+
+.form__btn::after {
+  width: 4.3rem;
+  height: 4.8rem;
+
+  top: 4rem;
+  left: calc(100% + 0.4rem);
+}
+
+/* main - result */
+.result {
+  margin-top: 6.8rem;
+}
+
+.result__text {
+  font-size: max(1.4rem, 3vw);
+}
+
+.result__text strong {
+  font-size: max(2.4rem, 8vw);
+}
+
+.result__btns {
+  margin-top: 5.2rem;
+  gap: 0.8rem;
+}
+
+.result__btn {
+  padding: 1.6rem 2.4rem;
+  font-size: max(1.4rem, 3vw);
+}
+
+/* footer */
+.footer {
+  margin-top: 6rem;
+  margin-bottom: 4.8rem;
+}
+
+.footer__copyright {
+  margin-top: 1.2rem;
+
+  font-size: 0.9rem;
+}
+
+/* modal */
+.modal {
+  padding: 4rem 4.5rem;
+
+  width: max(33rem, calc(100% - 120px));
+}
+
+.modal__text--large {
+  font-size: max(6.4rem, 15vw);
+}
+
+.modal__text--mobile {
+  display: none;
+}
+
+.modal__img {
+  margin-top: 2.4rem;
+}
+
+.modal__btn {
+  margin-top: 2.4rem;
+  padding: 2rem 0.8rem;
+  width: 100%;
+  line-height: 1.2;
+  font-size: max(1.4rem, 3vw);
+}
+
+.modal__btn--mobile {
+  display: block;
+}
