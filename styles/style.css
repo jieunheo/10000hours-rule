@@ -109,12 +109,10 @@ body {
   font-weight: 500;
 }
 
-/* main - find */
-.find {
-  margin-top: 10rem;
-}
-
+/* main - form */
 .form {
+  margin-top: 10rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -189,6 +187,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+  flex-wrap: wrap;
 }
 
 .result__text strong {
@@ -255,7 +254,7 @@ body {
   transform: translate(-50%, -50%);
 
   background-color: var(--text-white);
-  padding: 8rem 4.5rem;
+  padding: min(8rem, 8vh) 4.5rem;
   border-radius: 2rem;
   box-shadow: 4px 4px 30px 0 rgba(0, 0, 0, 0.15);
 
@@ -282,11 +281,15 @@ body {
 
 .modal__img {
   width: 100%;
-  margin-top: 4rem;
+  height: min(34.2rem, 40vh);
+  aspect-ratio: 438/342;
+  object-fit: contain;
+
+  margin-top: min(4rem, 2vh);
 }
 
 .modal__btn {
-  margin-top: 6rem;
+  margin-top: min(6rem, 3vh);
   padding: 2rem 4.8rem;
   background-color: var(--accent);
   border-radius: 1.2rem;

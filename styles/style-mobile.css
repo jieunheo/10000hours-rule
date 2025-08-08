@@ -138,6 +138,8 @@ button {
 
 .modal__img {
   margin-top: 2.4rem;
+  height: max(18.8rem, 45vw);
+  aspect-ratio: 240/188;
 }
 
 .modal__btn {
