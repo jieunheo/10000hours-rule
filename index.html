@@ -90,7 +90,9 @@
           </div>
 
           <div class="result__btns">
-            <button class="result__btn">훈련하러 가기 GO! GO!</button>
+            <button id="open_modal_btn" class="result__btn">
+              훈련하러 가기 GO! GO!
+            </button>
             <button class="result__btn result__btn--white">공유하기</button>
           </div>
         </section>
@@ -109,7 +111,7 @@
       </footer>
     </div>
 
-    <div class="modal__wrap">
+    <div id="modal" class="modal__wrap">
       <section class="modal">
         <h2 class="a11y-hidden">훈련하러 가기 모달</h2>
         <p class="modal__text modal__text--large">
@@ -131,11 +133,24 @@
           alt="응원하는 라이캣"
         />
 
-        <button class="modal__btn">
+        <button id="close_modal_btn" class="modal__btn">
           <span class="modal__btn--mobile"> 종료하고 진짜</span>
           훈련하러 가기 GO!GO!
         </button>
       </section>
     </div>
+
+    <script>
+      const open_modal_btn = document.querySelector("#open_modal_btn");
+      const modal = document.querySelector("#modal");
+      const close_modal_btn = document.querySelector("#close_modal_btn");
+
+      open_modal_btn.addEventListener("click", () => {
+        modal.classList.add("modal-show");
+      });
+      close_modal_btn.addEventListener("click", () => {
+        modal.classList.remove("modal-show");
+      });
+    </script>
   </body>
 </html>
