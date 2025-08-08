@@ -237,9 +237,17 @@ body {
 }
 
 /* modal */
-.modal {
+.modal__wrap {
   display: none;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
   width: min(80rem, calc(100% - 120px));
   position: absolute;
   top: 50%;
@@ -253,6 +261,9 @@ body {
 
   color: var(--primary);
   text-align: center;
+}
+.modal-show {
+  display: block;
 }
 
 .modal__text {
