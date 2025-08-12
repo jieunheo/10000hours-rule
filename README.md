@@ -93,6 +93,7 @@
 25.08.07(목) ~ 25.08.08(금), 평일 기준 총 2일
 (래포지토리 생성 및 index.html 파일 생성은 6일에 진행)
 ![schedule](./images/readme/schedule.png)
+노션 간트 사용
 
 ## 5. 화면
 
