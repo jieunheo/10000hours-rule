@@ -50,7 +50,7 @@
           </div>
 
           <h3 class="a11y-hidden">나의 1만 시간 법칙 찾기</h3>
-          <form class="form">
+          <form class="form" id="get_time_form">
             <p class="form__text">
               나는
               <label for="skill" class="a11y-hidden">전문 분야</label>
@@ -80,7 +80,7 @@
               시간씩 훈련할 것이다.
             </p>
 
-            <button class="form__btn" type="button">
+            <button class="form__btn">
               나는 며칠 동안 훈련을 해야
               <span class="form__btn--mobile">1만 시간이 될까?</span>
             </button>
@@ -161,6 +161,17 @@
       });
       close_modal_btn.addEventListener("click", () => {
         modal.classList.remove("modal-show");
+      });
+
+      const get_time_form = document.querySelector("#get_time_form");
+      get_time_form.addEventListener("submit", (event) => {
+        if (!get_time_form.checkValidity()) {
+          // 기본 메시지 보여주기
+          return; // 여기서 그냥 종료 → 제출 안 함
+        }
+
+        // 기본 동작 막기 (전송 방지)
+        event.preventDefault();
       });
     </script>
   </body>
