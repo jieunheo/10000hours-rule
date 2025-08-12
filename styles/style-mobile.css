@@ -34,7 +34,7 @@ button {
   font-weight: 100;
 }
 
-.cont__text strong {
+.cont__text dfn {
   font-size: max(1.4rem, 3vw);
 }
 
