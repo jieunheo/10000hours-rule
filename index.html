@@ -192,7 +192,7 @@
             }
           } else if (e.key === "Escape") {
             // ESC 키로 메뉴 닫기
-            closeNav();
+            closeModal();
           }
         }
 
@@ -205,26 +205,36 @@
         };
       }
 
-      const open_modal_btn = document.querySelector("#open_modal_btn");
-      const modal = document.querySelector("#modal");
-      const close_modal_btn = document.querySelector("#close_modal_btn");
-
-      open_modal_btn.addEventListener("click", () => {
-        modal.classList.add("modal-show");
-
-        open_modal_btn.setAttribute("aria-expanded", "true"); // ARIA 상태 업데이트
+      // 메뉴 열기 함수
+      const openModal = (btn, modal) => {
+        btn.setAttribute("aria-expanded", "true"); // ARIA 상태 업데이트
         removeTrap = trapFocus(modal); // 포커스 트랩 활성화
 
         // 첫 포커스 이동
         const firstLink = modal.querySelector("a, button");
         firstLink.focus();
+      };
+
+      // 메뉴 닫기 함수
+      const closeModal = (btn, modal) => {
+        btn.setAttribute("aria-expanded", "false");
+        if (removeTrap) removeTrap(); // 포커스 트랩 이벤트 제거
+        btn.focus(); // 다시 열기 버튼에 포커스
+      };
+
+      const open_modal_btn = document.querySelector("#open_modal_btn");
+      const modal = document.querySelector("#modal");
+      const close_modal_btn = document.querySelector("#close_modal_btn");
+
+      open_modal_btn.addEventListener("click", (event) => {
+        modal.classList.add("modal-show");
+
+        openModal(open_modal_btn, modal);
       });
       close_modal_btn.addEventListener("click", () => {
         modal.classList.remove("modal-show");
 
-        close_modal_btn.setAttribute("aria-expanded", "false");
-        if (removeTrap) removeTrap(); // 포커스 트랩 이벤트 제거
-        close_modal_btn.focus(); // 다시 열기 버튼에 포커스
+        closeModal(open_modal_btn, modal);
       });
 
       const get_time_form = document.querySelector("#get_time_form");
