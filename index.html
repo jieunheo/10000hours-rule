@@ -162,15 +162,69 @@
     </div>
 
     <script>
+      // 포커스 트랩 제거 함수 저장 변수
+      let removeTrap = null;
+      // 포커스 트랩 기능 -chatGPT 도움
+      function trapFocus(element) {
+        // 메뉴 안에서 포커스 가능한 모든 요소
+        const focusableEls = element.querySelectorAll("a[href], button");
+
+        const firstFocusable = focusableEls[0]; // 첫번째 요소
+        const lastFocusable = focusableEls[focusableEls.length - 1]; // 마지막 요소
+
+        // 키보드 이벤트
+        function handleKeyDown(e) {
+          if (e.key === "Tab") {
+            if (e.shiftKey) {
+              // Shift + Tab
+              // 첫번째 요소이면 제일 마지막 요소에 포커스
+              if (document.activeElement === firstFocusable) {
+                e.preventDefault(); // 기본 동작 막기
+                lastFocusable.focus();
+              }
+            } else {
+              // Tab
+              // 마지막 요소이면 제일 첫번째 요소에 포커스
+              if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+              }
+            }
+          } else if (e.key === "Escape") {
+            // ESC 키로 메뉴 닫기
+            closeNav();
+          }
+        }
+
+        // 요소에 이벤트 추가
+        element.addEventListener("keydown", handleKeyDown);
+
+        // 메뉴 닫힐 때 이벤트 제거
+        return () => {
+          element.removeEventListener("keydown", handleKeyDown);
+        };
+      }
+
       const open_modal_btn = document.querySelector("#open_modal_btn");
       const modal = document.querySelector("#modal");
       const close_modal_btn = document.querySelector("#close_modal_btn");
 
       open_modal_btn.addEventListener("click", () => {
         modal.classList.add("modal-show");
+
+        open_modal_btn.setAttribute("aria-expanded", "true"); // ARIA 상태 업데이트
+        removeTrap = trapFocus(modal); // 포커스 트랩 활성화
+
+        // 첫 포커스 이동
+        const firstLink = modal.querySelector("a, button");
+        firstLink.focus();
       });
       close_modal_btn.addEventListener("click", () => {
         modal.classList.remove("modal-show");
+
+        close_modal_btn.setAttribute("aria-expanded", "false");
+        if (removeTrap) removeTrap(); // 포커스 트랩 이벤트 제거
+        close_modal_btn.focus(); // 다시 열기 버튼에 포커스
       });
 
       const get_time_form = document.querySelector("#get_time_form");
