@@ -66,14 +66,14 @@
             </p>
             <p class="form__text">
               <span class="form__text--mobile">그래서 앞으로 매일 하루에</span>
-              <label for="time" class="a11y-hidden">훈련 시간</label>
+              <label for="hour" class="a11y-hidden">훈련 시간</label>
               <input
                 class="form__input"
                 type="number"
                 min="1"
                 max="24"
-                name="time"
-                id="time"
+                name="hour"
+                id="hour"
                 placeholder="예)5시간"
                 required
               />
@@ -91,12 +91,22 @@
           <h2 class="a11y-hidden">나의 1만 시간 법칙 결과</h2>
           <div class="result__cont">
             <p class="result__text">
-              당신은 <strong><output>프로그래밍</output></strong> 전문가가 되기
-              위해서
+              당신은
+              <strong
+                ><output id="result_skill" name="result_skill" for="skill"
+                  >프로그래밍</output
+                ></strong
+              >
+              전문가가 되기 위해서
             </p>
             <p class="result__text">
-              대략 <strong><output>5110</output></strong> 일 이상 훈련하셔야
-              합니다! :)
+              대략
+              <strong
+                ><output id="result_hour" name="result_hour" for="hour"
+                  >5110</output
+                ></strong
+              >
+              일 이상 훈련하셔야 합니다! :)
             </p>
           </div>
 
@@ -172,6 +182,19 @@
 
         // 기본 동작 막기 (전송 방지)
         event.preventDefault();
+
+        const standard = 10000; // 기준시간
+
+        // 입력 값
+        const skill = get_time_form.querySelector("#skill").value;
+        const hour = get_time_form.querySelector("#hour").value;
+
+        // 출력 값
+        const result_skill = document.querySelector("#result_skill");
+        const result_hour = document.querySelector("#result_hour");
+
+        result_skill.innerText = skill;
+        result_hour.innerText = Math.floor(standard / hour); // 이상이니 내림으로 계산
       });
     </script>
   </body>
